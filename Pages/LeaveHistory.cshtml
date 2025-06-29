@@ -1,0 +1,31 @@
+﻿@page
+@model LeaveHistoryModel
+@{
+    ViewData["Title"] = "Leave History";
+}
+
+<h2>Leave History</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Leave Type</th>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>Reason</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model.Requests)
+        {
+            <tr>
+                <td>@request.LeaveType?.TypeName</td>
+                <td>@request.FromDate.ToShortDateString()</td>
+                <td>@request.ToDate.ToShortDateString()</td>
+                <td>@request.Reason</td>
+                <td>@request.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>

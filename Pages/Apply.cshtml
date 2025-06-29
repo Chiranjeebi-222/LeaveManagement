@@ -1,0 +1,31 @@
+﻿@page
+@model ApplyModel
+@{
+    ViewData["Title"] = "Apply for Leave";
+}
+
+<h2>Apply for Leave</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="LeaveRequest.LeaveTypeID">Leave Type</label>
+        <select asp-for="LeaveRequest.LeaveTypeID" asp-items="Model.LeaveTypes" class="form-control"></select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LeaveRequest.FromDate">From</label>
+        <input asp-for="LeaveRequest.FromDate" type="date" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LeaveRequest.ToDate">To</label>
+        <input asp-for="LeaveRequest.ToDate" type="date" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LeaveRequest.Reason">Reason</label>
+        <textarea asp-for="LeaveRequest.Reason" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
